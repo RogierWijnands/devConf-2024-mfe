@@ -43,7 +43,6 @@ module.exports = {
       name: "shell",
       filename: "remoteEntry.js",
       remotes: {
-        LeftNav: "leftNavigation@http://localhost:3002/remoteEntry.js",
         TopNav: "topNavigation@http://localhost:3003/remoteEntry.js",
         ItemDetails: "itemDetails@http://localhost:3004/remoteEntry.js",
       },

@@ -1,9 +1,12 @@
 import React, { Suspense } from "react";
 import "./App.scss";
 
-const LeftNavComponent = React.lazy(() => import("LeftNav/LeftNav"));
-const TopNavComponent = React.lazy(() => import("TopNav/TopNav"));
-const ItemDetailsComponent = React.lazy(() =>import("ItemDetails/ItemDetails"));
+import TopNavComponent from 'TopNav/TopNav';
+import ItemDetailsComponent from 'ItemDetails/ItemDetails';
+
+import { importRemote } from "module-federation-import-remote";
+
+const LeftNavComponent = React.lazy(() => importRemote({ url: "http://localhost:3002", scope: "leftNavigation", module: "LeftNav" }));
 
 export default function () {
   return (
